@@ -219,10 +219,10 @@
             btn.textContent = 'Resetting...';
 
             try {
-                const response = await fetch('https://13BB3B.playfabapi.com/Client/ResetPassword', {
+                const response = await fetch('/api/v1/reset-password', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ Token: token, Password: password, TitleId: '13BB3B' })
+                    body: SON.stringify({ token, password })
                 });
 
                 const data = await response.json();
