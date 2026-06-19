@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    if (data.status === 'OK') return res.status(200).json({ success: true });
+    if (data.success) return res.status(200).json({ success: true });
 
     return res.status(400).json({ error: data.errorMessage || 'Something went wrong' });
 }
